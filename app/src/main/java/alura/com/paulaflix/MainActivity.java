@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //  gerencia as listas
-    private static class MovieHolder extends RecyclerView.ViewHolder {
+    protected static class MovieHolder extends RecyclerView.ViewHolder {
 
         final ImageView imageViewCover;
 

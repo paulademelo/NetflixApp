@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PaulaFlix</string>
+    <!--    1º variavel do formato string-->
+    <string name="cast">Elenco: %1$s</string>
+    <string name="similar">Opções semelhantes</string>
+    <string name="batman_desc">Marcado pelo assassinato de seus pais quando ainda era criança, o milionário Bruce Wayne (Christian Bale) decide viajar pelo mundo em busca de encontrar meios que lhe permitam combater a injustiça e provocar medo em seus adversários. Após retornar a Gotham City, sua cidade-natal, ele idealiza seu alter-ego: Batman, um justiceiro mascarado que usa força, inteligência e um arsenal tecnológico para combater o crime.</string>
+    <string name="batman_cast">Christian Bale, Morgan Freeman, Liam Neeson, Katie Holmes, Michael Caine, Ken Watanabe, Gary Oldman</string>
 </resources>
