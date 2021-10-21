@@ -15,9 +15,11 @@ import java.util.List;
 
 import alura.com.paulaflix.model.Category;
 import alura.com.paulaflix.model.Movie;
+import alura.com.paulaflix.util.CategoryTask;
+import alura.com.paulaflix.util.ImageDownloaderTask;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CategoryTask.CategoryLoader {
 
     private MainAdapter mainAdapter;
 
@@ -30,22 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         //criando de categorias
         List<Category> categories = new ArrayList<>();
-        for (int j = 0; j < 10; j++) {
-            Category category = new Category();
-            category.setName("Category: " + j);
-
-            // criando array list de filmes
-            List<Movie> movies = new ArrayList<>();
-            // fazendo a iteração dos elementros
-            for (int i = 0; i < 30; i++) {
-                Movie movie = new Movie();
-
-                // adicionando o filme na lista
-                movies.add(movie);
-            }
-            category.setMovies(movies);
-            categories.add(category);
-        }
 
         // gerencia os itens dinamicos e atribui para o viewHolder
         mainAdapter = new MainAdapter(categories);
@@ -53,10 +39,22 @@ public class MainActivity extends AppCompatActivity {
                 RecyclerView.VERTICAL,
                 false));
         recyclerView.setAdapter(mainAdapter);
+
+        // intanciando o json
+       CategoryTask categoryTask = new CategoryTask(this);
+       categoryTask.setCategoryLoader(this);
+               categoryTask.execute("https://tiagoaguiar.co/api/netflix/home");
+    }
+
+    @Override
+    public void onResult(List<Category> categories) {
+        mainAdapter.setCategories(categories);
+        //todos os dados podem ser populados
+        mainAdapter.notifyDataSetChanged();
     }
 
     //  gerencia as listas
-    protected static class MovieHolder extends RecyclerView.ViewHolder {
+    public static class MovieHolder extends RecyclerView.ViewHolder {
 
         final ImageView imageViewCover;
 
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class MainAdapter extends RecyclerView.Adapter<CategoryHolder> {
 
-        private final List<Category> categories;
+        private List<Category> categories;
 
         private MainAdapter(List<Category> categories) {
             this.categories = categories;
@@ -108,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
             return categories.size();
         }
 
+        void setCategories(List<Category> categories) {
+            this.categories.clear();
+            this.categories.addAll(categories);
+        }
     }
 
     private class MovieAdapter extends RecyclerView.Adapter<MovieHolder> {
@@ -125,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull MovieHolder movieHolder, int position) {
+        public void onBindViewHolder(@NonNull MovieHolder holder, int position) {
             Movie movie = movies.get(position);
-
+            new ImageDownloaderTask(holder.imageViewCover).execute(movie.getCoverUrl());
         }
 
         @Override

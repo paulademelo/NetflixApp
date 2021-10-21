@@ -6,12 +6,13 @@
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1265625" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/drawable/ic_baseline_play_arrow.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/drawable/ic_play_button.xml" value="0.33" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/drawable/placeholder_bg.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/drawable/shadows.xml" value="0.5" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/activity_movie.xml" value="0.33" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/activity_movie.xml" value="0.18" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/category_item.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/movie_item.xml" value="0.2" />
+        <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/movie_item.xml" value="0.25" />
         <entry key="..\:/Users/pauli/AndroidStudioProjects/PaulaFlix/app/src/main/res/layout/movie_item_similar.xml" value="0.22" />
       </map>
     </option>
